@@ -270,6 +270,14 @@
             transition: all 0.3s;
         }
 
+        /* Center specific option card (Volunteers) */
+        .option-card.center-volunteer {
+            grid-column: 1 / -1;
+            max-width: 420px;
+            margin: 0 auto;
+            justify-self: center;
+        }
+
         .option-card:hover {
             background: rgba(255,255,255,0.2);
             transform: translateY(-5px);
@@ -392,6 +400,15 @@
             <div style="max-width: 900px; margin: 0 auto; text-align: center;">
                 <a href="https://play.google.com/store/apps/details?id=com.featsclub.seva&hl=en" class="cta-btn" target="_blank" rel="noopener noreferrer">Get the App</a>
             </div>
+            <div style="max-width: 900px; margin: 2rem auto 0; text-align: center;">
+                <ul style="list-style: none; padding: 0; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <li style="background: var(--white); padding: 0.6rem 1rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); font-weight: 600; color: var(--dark-blue);">Global Ambassadors</li>
+                    <li style="background: var(--white); padding: 0.6rem 1rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); font-weight: 600; color: var(--dark-blue);">Giving Circle</li>
+                    <li style="background: var(--white); padding: 0.6rem 1rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); font-weight: 600; color: var(--dark-blue);">Legacy Donors</li>
+                    <li style="background: var(--white); padding: 0.6rem 1rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); font-weight: 600; color: var(--dark-blue);">International Advisory</li>
+                    <li style="background: var(--white); padding: 0.6rem 1rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); font-weight: 600; color: var(--dark-blue);">Investment Committee</li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -474,7 +491,7 @@
                     <h3>Institutions/NGOs</h3>
                     <p>Apply for funding or collaboration</p>
                 </div>
-                <div class="option-card">
+                <div class="option-card center-volunteer">
                     <h3>Volunteers</h3>
                     <p>Join programs, mentorships, field visits</p>
                 </div>
@@ -516,19 +533,45 @@
         // Counter animation
         function animateCounters() {
             const counters = document.querySelectorAll('.counter-number');
+
+            function parseTarget(str) {
+                if (!str) return 0;
+                const s = String(str).trim().toUpperCase();
+                const multipliers = {K: 1e3, M: 1e6, B: 1e9};
+                const last = s[s.length - 1];
+                if (multipliers[last]) {
+                    const num = parseFloat(s.slice(0, -1)) || 0;
+                    return Math.round(num * multipliers[last]);
+                }
+                return parseInt(s.replace(/[^0-9.-]/g, ''), 10) || 0;
+            }
+
+            function formatWithSuffix(n) {
+                if (n >= 1e9) return (n / 1e9).toFixed(n % 1e9 === 0 ? 0 : 1).replace(/\.0$/, '') + 'B';
+                if (n >= 1e6) return (n / 1e6).toFixed(n % 1e6 === 0 ? 0 : 1).replace(/\.0$/, '') + 'M';
+                if (n >= 1e3) return (n / 1e3).toFixed(n % 1e3 === 0 ? 0 : 1).replace(/\.0$/, '') + 'K';
+                return n.toLocaleString();
+            }
+
             counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-target').replace(/[^0-9]/g, ''));
-                const increment = target / 100;
+                const raw = counter.getAttribute('data-target');
+                const target = parseTarget(raw);
+                const duration = 2000; // ms
+                const frameTime = 20; // ms per tick
+                const steps = Math.max(Math.round(duration / frameTime), 1);
+                const increment = Math.ceil(target / steps) || 1;
                 let current = 0;
+
                 const timer = setInterval(() => {
                     current += increment;
                     if (current >= target) {
-                        counter.textContent = counter.getAttribute('data-target');
+                        counter.textContent = raw;
                         clearInterval(timer);
                     } else {
-                        counter.textContent = Math.floor(current).toLocaleString() + (target >= 1000000 ? 'M' : target >= 1000 ? 'K' : '');
+                        counter.textContent = formatWithSuffix(current);
                     }
-                }, 20);
+                }, frameTime);
+
                 counter.classList.add('animate-counter');
             });
         }
