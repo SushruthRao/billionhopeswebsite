@@ -99,11 +99,12 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             background: linear-gradient(rgba(15,23,42,0.55), rgba(15,23,42,0.25)), url('billionhopesimage.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -111,6 +112,7 @@
             color: var(--white);
             position: relative;
             overflow: hidden;
+            padding-top: 100px;
         }
 
         .hero::before {
@@ -125,15 +127,86 @@
         }
 
         .hero-content {
-            max-width: 800px;
-            padding: 0 2rem;
+            max-width: 100%;
+            margin-top: 1rem;
+            padding: 2rem 2rem;
             position: relative;
             z-index: 2;
+        }
+
+        /* Hero layout: media left, text center, logos right */
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero-media {   
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .poster-logo {
+            width: 14rem;
+            height: auto;
+            object-fit: contain;
+            background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.6) 10%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 60%);
+            padding: 1.5rem;
+            box-sizing: border-box;
+        }
+
+        .poster-img {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 18px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+            display: block;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            text-align: center;
+            color: var(--white);
+            width: 100%;
+            overflow: visible;
+        }
+
+        .hero-logos {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            align-items: center;
+        }
+
+        .hero-logos .logo-item {
+            width: 110px;
+            height: 48px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        .hero-logos img { 
+            max-width: 80%; 
+            max-height: 80%; 
+            object-fit: contain;
+            display: block;
         }
 
         .hero h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
             margin-bottom: 1rem;
+            margin-top: 2rem;
             animation: fadeInUp 1s ease;
         }
 
@@ -315,8 +388,28 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            nav {
+                padding: 0.5rem 0;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
             .nav-links {
                 display: none;
+            }
+
+            .nav-container > .cta-btn {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 60px;
             }
 
             .hero-buttons {
@@ -327,6 +420,34 @@
             .vm-grid {
                 grid-template-columns: 1fr;
             }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 1rem;
+            }
+
+            .hero-text {
+                order: -1;
+            }
+
+            .hero-media {
+                display: flex;
+            }
+
+            .hero-logos {
+                display: flex;
+            }
+
+            .hero-text {
+                padding: 1rem 0;
+            }
+            }
+
+            .poster-logo
+             {
+                height: 18rem;
+                 width: 18rem; }
 
             .impact-counter {
                 gap: 2rem;
@@ -369,25 +490,40 @@
   
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Ignite a Billion Hopes</h1>
-            <p>When a billion people give with hope, the world transforms.</p>
-            <div class="hero-buttons">
-                <a href="https://play.google.com/store/apps/details?id=com.featsclub.seva&hl=en" class="cta-btn" style="background: var(--white); color: var(--blue);" target="_blank" rel="noopener noreferrer">Start Giving</a>
-                <a href="#about" class="cta-btn">Join the Movement</a>
-            </div>
-            <div class="impact-counter">
-                <div class="counter-item">
-                    <span class="counter-number" data-target="1B">0</span>
-                    <span class="counter-label">Lives Impacted</span>
+            <div class="hero-inner">
+                <div class="hero-media">
+                     <img src="billionhopeslogo.png" alt="Billion Hopes logo" class="poster-logo">
+                    <img src="poster_hope.jpg" alt="Campaign poster" class="poster-img">
+                   
                 </div>
-                <div class="counter-item">
-                    <span class="counter-number" data-target="100K">0</span>
-                    <span class="counter-label">Changemakers Supported</span>
+
+                <div class="hero-text">
+                    <h1>Ignite a Billion Hopes</h1>
+                    <p>When a billion people give with hope, the world transforms.</p>
+                    <div class="hero-buttons">
+                        <a href="https://play.google.com/store/apps/details?id=com.featsclub.seva&hl=en" class="cta-btn" style="background: var(--white); color: var(--blue);" target="_blank" rel="noopener noreferrer">Start Giving</a>
+                        <a href="#about" class="cta-btn">Join the Movement</a>
+                    </div>
+                    <div class="impact-counter" style="margin-top: 2rem; display:flex; justify-content:center; gap:2rem;">
+                        <div class="counter-item">
+                            <span class="counter-number" data-target="1B">0</span>
+                            <span class="counter-label">Lives Impacted</span>
+                        </div>
+                        <div class="counter-item">
+                            <span class="counter-number" data-target="100K">0</span>
+                            <span class="counter-label">Changemakers Supported</span>
+                        </div>
+                        <div class="counter-item">
+                            <span class="counter-number" data-target="1B">0</span>
+                            <span class="counter-label">Funds Mobilized</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="counter-item">
-                    <span class="counter-number" data-target="1B">0</span>
-                    <span class="counter-label">Funds Mobilized</span>
-                </div>
+
+                <div class="hero-logos" aria-label="Partner logos">
+                    <div class="poster-logo"><img src="rotary-removebg-preview.png" alt="Partner 1"></div>
+                    <div class="poster-logo"><img src="stepout-removebg-preview.png" alt="Partner 2"></div>
+                    
             </div>
         </div>
     </section>
@@ -520,6 +656,26 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        (function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+
+                // Close menu when a link is clicked
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuToggle.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    });
+                });
+            }
+        })();
+
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
