@@ -161,7 +161,14 @@
             padding: 1.5rem;
             box-sizing: border-box;
         }
-
+        .poster-logo-l {
+            width: 14rem;
+            height: auto;
+            object-fit: contain;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.1) 7%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0) 60%);
+            padding: 1.5rem;
+            box-sizing: border-box;
+        }
         .poster-img {
             width: 100%;
             max-width: 320px;
@@ -176,6 +183,8 @@
             color: var(--white);
             width: 100%;
             overflow: visible;
+            align-self: start;
+            margin-top: 0;
         }
 
         .hero-logos {
@@ -183,6 +192,7 @@
             flex-direction: column;
             gap: 0.8rem;
             align-items: center;
+            margin-top: 0;
         }
 
         .hero-logos .logo-item {
@@ -521,8 +531,9 @@
                 </div>
 
                 <div class="hero-logos" aria-label="Partner logos">
-                    <div class="poster-logo"><img src="rotary-removebg-preview.png" alt="Partner 1"></div>
-                    <div class="poster-logo"><img src="stepout-removebg-preview.png" alt="Partner 2"></div>
+                    <h1>Partners</h1>
+                   <img src="rotary-removebg-preview.png" alt="Partner 1" class="poster-logo-l">
+                   <img src="stepout-removebg-preview.png" alt="Partner 2" class="poster-logo-l">
                     
             </div>
         </div>
