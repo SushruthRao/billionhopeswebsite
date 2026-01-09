@@ -136,14 +136,14 @@
 
         /* Hero layout: media left, text center, logos right */
         .hero-inner {
-            display: grid;
-            grid-template-columns: 1fr 3fr 1fr;
-            gap: 2rem;
+            display: flex;
+            justify-content: center;
             align-items: center;
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
+            min-height: 60vh;
         }
 
         .hero-media {   
@@ -513,11 +513,11 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-inner">
-                <div class="hero-media">
+                <!-- <div class="hero-media">
                      <img src="billionhopeslogo.png" alt="Billion Hopes logo" class="poster-logo">
                     <img src="poster_hope.jpg" alt="Campaign poster" class="poster-img">
                    
-                </div>
+                </div> -->
 
                 <div class="hero-text">
                     <h1>Ignite a Billion Hopes</h1>
@@ -542,12 +542,12 @@
                     </div>
                 </div>
 
-                <div class="hero-logos" aria-label="Partner logos">
+                <!-- <div class="hero-logos" aria-label="Partner logos">
                     <h1>Partners</h1>
                    <div class="poster-logo-l"><img src="rotary-removebg-preview.png" alt="Partner 1"></div>
                    <div class="poster-logo-l"><img src="stepout-removebg-preview.png" alt="Partner 2"></div>
                     
-            </div>
+            </div> -->
         </div>
     </section>
 
