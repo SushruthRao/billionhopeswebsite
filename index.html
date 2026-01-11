@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Billion Hopes Philanthropic Foundation - Ignite a Billion Hopes</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --gold: #D4AF37;
@@ -43,7 +45,7 @@
 
         nav.scrolled {
             background: var(--white);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
 
         .nav-container {
@@ -60,12 +62,16 @@
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--gold);
+            white-space: nowrap;
+            margin-right: 1rem;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
             gap: 2rem;
+            margin-right:2rem;
+            margin-left : 2rem;
         }
 
         .nav-links a {
@@ -79,18 +85,21 @@
             color: var(--gold);
         }
 
-        .cta-btn {
-            background: var(--gold);
-            color: var(--white);
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
+       .cta-btn {
+    background: var(--gold);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;   /* 🔑 keeps text on one line */
+}
 
         .cta-btn:hover {
             transform: translateY(-2px);
@@ -100,7 +109,7 @@
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(rgba(15,23,42,0.55), rgba(15,23,42,0.25)), url('billionhopesimage.jpg');
+            background: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.25)), url('billionhopesimage.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -146,7 +155,7 @@
             min-height: 60vh;
         }
 
-        .hero-media {   
+        .hero-media {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -157,10 +166,11 @@
             width: 14rem;
             height: auto;
             object-fit: contain;
-            background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.6) 10%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 60%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 10%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 60%);
             padding: 1.5rem;
             box-sizing: border-box;
         }
+
         /* Partner logo container with centered radial glow */
         .poster-logo-l {
             width: 14rem;
@@ -168,7 +178,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: radial-gradient(circle at center, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.08) 20%, rgba(255,255,255,0.03) 50%, rgba(255,255,255,0) 75%);
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.08) 20%, rgba(255, 255, 255, 0.03) 50%, rgba(255, 255, 255, 0) 75%);
             padding: 1rem;
             box-sizing: border-box;
             border-radius: 12px;
@@ -181,11 +191,12 @@
             object-fit: contain;
             display: block;
         }
+
         .poster-img {
             width: 100%;
             max-width: 320px;
             border-radius: 18px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
             display: block;
             object-fit: cover;
         }
@@ -210,17 +221,17 @@
         .hero-logos .logo-item {
             width: 110px;
             height: 48px;
-            background: rgba(255,255,255,0.95);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
         }
 
-        .hero-logos img { 
-            max-width: 80%; 
-            max-height: 80%; 
+        .hero-logos img {
+            max-width: 80%;
+            max-height: 80%;
             object-fit: contain;
             display: block;
         }
@@ -299,7 +310,7 @@
             background: var(--white);
             padding: 2.5rem;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
 
@@ -357,7 +368,7 @@
         }
 
         .option-card {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
@@ -374,7 +385,7 @@
         }
 
         .option-card:hover {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-5px);
         }
 
@@ -392,6 +403,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -404,8 +416,15 @@
         }
 
         @keyframes countUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Responsive */
@@ -426,7 +445,7 @@
                 display: none;
             }
 
-            .nav-container > .cta-btn {
+            .nav-container>.cta-btn {
                 display: none;
             }
 
@@ -464,20 +483,20 @@
             .hero-text {
                 padding: 1rem 0;
             }
-            }
+        }
 
-            .poster-logo
-             {
-                height: 18rem;
-                 width: 18rem; }
+        .poster-logo {
+            height: 18rem;
+            width: 18rem;
+        }
 
-            .impact-counter {
-                gap: 2rem;
-            }
+        .impact-counter {
+            gap: 2rem;
+        }
 
-            .counter-number {
-                font-size: 2rem;
-            }
+        .counter-number {
+            font-size: 2rem;
+        }
         }
 
         /* Scroll animations */
@@ -493,6 +512,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav>
@@ -503,13 +523,15 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#vision">Vision</a></li>
                 <li><a href="#pillars">Pillars</a></li>
+                <li><a href="mandate.html">Mandate</a></li>
                 <li><a href="#involved">Get Involved</a></li>
             </ul>
-            <a href="https://play.google.com/store/apps/details?id=com.featsclub.seva&hl=en" class="cta-btn" target="_blank" rel="noopener noreferrer">Start Giving</a>
+            <a href="https://play.google.com/store/apps/details?id=com.featsclub.seva&hl=en" class="cta-btn"
+                target="_blank" rel="noopener noreferrer">Start Giving</a>
         </div>
     </nav>
 
-  
+
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-inner">
@@ -523,10 +545,13 @@
                     <h1>Ignite a Billion Hopes</h1>
                     <p>When a billion people give with hope, the world transforms.</p>
                     <div class="hero-buttons">
-                        <a href="https://play.google.com/store/apps/details?id=com.featsclub.seva&hl=en" class="cta-btn" style="background: var(--white); color: var(--blue);" target="_blank" rel="noopener noreferrer">Start Giving</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.featsclub.seva&hl=en" class="cta-btn"
+                            style="background: var(--white); color: var(--blue);" target="_blank"
+                            rel="noopener noreferrer">Start Giving</a>
                         <a href="#about" class="cta-btn">Join the Movement</a>
                     </div>
-                    <div class="impact-counter" style="margin-top: 2rem; display:flex; justify-content:center; gap:2rem;">
+                    <div class="impact-counter"
+                        style="margin-top: 2rem; display:flex; justify-content:center; gap:2rem;">
                         <div class="counter-item">
                             <span class="counter-number" data-target="1B">0</span>
                             <span class="counter-label">Lives Impacted</span>
@@ -537,7 +562,7 @@
                         </div>
                         <div class="counter-item">
                             <span class="counter-number" data-tagitspan>
-                            <span class="counter-label">Funds Mobilized</span>
+                                <span class="counter-label">Funds Mobilized</span>
                         </div>
                     </div>
                 </div>
@@ -548,51 +573,75 @@
                    <div class="poster-logo-l"><img src="stepout-removebg-preview.png" alt="Partner 2"></div>
                     
             </div> -->
-        </div>
+            </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="vision-mission reveal">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: var(--blue);">About Billion Hopes</h2>
-            <p style="text-align: center; max-width: 900px; margin: 0 auto 2rem; opacity: 0.9;">Billion Hopes is a philanthropic initiative focused on mobilising everyday donors, supporting changemakers, and building large-scale, sustainable impact across health, education, climate and livelihoods. We blend community giving, technology, and transparent impact reporting to amplify contributions from individuals and organisations.</p>
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: var(--blue);">About Billion
+                Hopes</h2>
+            <p style="text-align: center; max-width: 900px; margin: 0 auto 2rem; opacity: 0.9;">Billion Hopes is a
+                philanthropic initiative focused on mobilising everyday donors, supporting changemakers, and building
+                large-scale, sustainable impact across health, education, climate and livelihoods. We blend community
+                giving, technology, and transparent impact reporting to amplify contributions from individuals and
+                organisations.</p>
             <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-                <a href="https://play.google.com/store/apps/details?id=com.featsclub.seva&hl=en" class="cta-btn" target="_blank" rel="noopener noreferrer">Get the App</a>
+                <a href="https://play.google.com/store/apps/details?id=com.featsclub.seva&hl=en" class="cta-btn"
+                    target="_blank" rel="noopener noreferrer">Get the App</a>
             </div>
             <div style="max-width: 900px; margin: 2rem auto 0; text-align: center;">
-                <ul style="list-style: none; padding: 0; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-                    <li style="background: var(--white); padding: 0.6rem 1rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); font-weight: 600; color: var(--dark-blue);">Global Ambassadors</li>
-                    <li style="background: var(--white); padding: 0.6rem 1rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); font-weight: 600; color: var(--dark-blue);">Giving Circle</li>
-                    <li style="background: var(--white); padding: 0.6rem 1rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); font-weight: 600; color: var(--dark-blue);">Legacy Donors</li>
-                    <li style="background: var(--white); padding: 0.6rem 1rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); font-weight: 600; color: var(--dark-blue);">International Advisory</li>
-                    <li style="background: var(--white); padding: 0.6rem 1rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); font-weight: 600; color: var(--dark-blue);">Investment Committee</li>
+                <ul
+                    style="list-style: none; padding: 0; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <li
+                        style="background: var(--white); padding: 0.6rem 1rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); font-weight: 600; color: var(--dark-blue);">
+                        Global Ambassadors</li>
+                    <li
+                        style="background: var(--white); padding: 0.6rem 1rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); font-weight: 600; color: var(--dark-blue);">
+                        Giving Circle</li>
+                    <li
+                        style="background: var(--white); padding: 0.6rem 1rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); font-weight: 600; color: var(--dark-blue);">
+                        Legacy Donors</li>
+                    <li
+                        style="background: var(--white); padding: 0.6rem 1rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); font-weight: 600; color: var(--dark-blue);">
+                        International Advisory</li>
+                    <li
+                        style="background: var(--white); padding: 0.6rem 1rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); font-weight: 600; color: var(--dark-blue);">
+                        Investment Committee</li>
                 </ul>
             </div>
         </div>
     </section>
 
-     <section id="communities" style="padding: 5rem 0; background: var(--white);">
+    <section id="communities" style="padding: 5rem 0; background: var(--white);">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: var(--blue);">Communities We Support</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; opacity: 0.8;">Empowering changemakers making a difference on the ground</p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: var(--blue);">Communities We
+                Support</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; opacity: 0.8;">Empowering changemakers
+                making a difference on the ground</p>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
                 <div class="vm-card reveal">
                     <h3 style="color: var(--gold); font-size: 1.5rem; margin-bottom: 1rem;">Aarogya Seva</h3>
-                    <p style="opacity: 0.85;">Providing accessible healthcare services to underserved communities, ensuring health equity and wellness for all.</p>
+                    <p style="opacity: 0.85;">Providing accessible healthcare services to underserved communities,
+                        ensuring health equity and wellness for all.</p>
                 </div>
                 <div class="vm-card reveal">
                     <h3 style="color: var(--gold); font-size: 1.5rem; margin-bottom: 1rem;">Ayang</h3>
-                    <p style="opacity: 0.85;">Transforming lives through innovative community-driven initiatives focused on sustainable development and empowerment.</p>
+                    <p style="opacity: 0.85;">Transforming lives through innovative community-driven initiatives focused
+                        on sustainable development and empowerment.</p>
                 </div>
                 <div class="vm-card reveal">
                     <h3 style="color: var(--gold); font-size: 1.5rem; margin-bottom: 1rem;">Sunbird</h3>
-                    <p style="opacity: 0.85;">Building digital infrastructure and open-source solutions to democratize access to education and opportunities.</p>
+                    <p style="opacity: 0.85;">Building digital infrastructure and open-source solutions to democratize
+                        access to education and opportunities.</p>
                 </div>
             </div>
             <div style="display: flex; justify-content: center; margin-top: 2rem;">
                 <div class="vm-card reveal" style="max-width: 420px; width: 100%;">
                     <h3 style="color: var(--gold); font-size: 1.5rem; margin-bottom: 1rem;">Saradev Eye Hospital</h3>
-                    <p style="opacity: 0.85;">Restoring vision and hope through quality eye care services, making sight accessible to those who need it most.</p>
+                    <p style="opacity: 0.85;">Restoring vision and hope through quality eye care services, making sight
+                        accessible to those who need it most.</p>
                 </div>
             </div>
         </div>
@@ -601,16 +650,20 @@
     <!-- Vision Mission -->
     <section id="vision" class="vision-mission reveal">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: var(--blue);">Our Vision & Mission</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; opacity: 0.8;">Transforming philanthropy through collective action</p>
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: var(--blue);">Our Vision &
+                Mission</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; opacity: 0.8;">Transforming
+                philanthropy through collective action</p>
             <div class="vm-grid">
                 <div class="vm-card">
                     <h3>Our Vision</h3>
-                    <p>To activate a global culture of giving where every Indian becomes a co-architect of a more equitable world. India as a philanthropic superpower funding solutions across borders.</p>
+                    <p>To activate a global culture of giving where every Indian becomes a co-architect of a more
+                        equitable world. India as a philanthropic superpower funding solutions across borders.</p>
                 </div>
                 <div class="vm-card">
                     <h3>Our Mission</h3>
-                    <p>To channel collective giving from the many to empower changemakers with flexible capital for systemic transformation.</p>
+                    <p>To channel collective giving from the many to empower changemakers with flexible capital for
+                        systemic transformation.</p>
                 </div>
             </div>
         </div>
@@ -659,7 +712,8 @@
     <section id="involved" class="get-involved reveal">
         <div class="container">
             <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Get Involved</h2>
-            <p style="text-align: center; max-width: 600px; margin: 0 auto 3rem; opacity: 0.9;">Options for every visitor to be part of the change</p>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 3rem; opacity: 0.9;">Options for every
+                visitor to be part of the change</p>
             <div class="options-grid">
                 <div class="option-card">
                     <h3>Individual Donors</h3>
@@ -683,7 +737,9 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="https://play.google.com/store/apps/details?id=com.featsclub.seva&hl=en" class="cta-btn" style="background: var(--gold); color: var(--white); padding: 1rem 2rem; font-size: 1.2rem;" target="_blank" rel="noopener noreferrer">Start Your Journey</a>
+                <a href="https://play.google.com/store/apps/details?id=com.featsclub.seva&hl=en" class="cta-btn"
+                    style="background: var(--gold); color: var(--white); padding: 1rem 2rem; font-size: 1.2rem;"
+                    target="_blank" rel="noopener noreferrer">Start Your Journey</a>
             </div>
         </div>
     </section>
@@ -692,15 +748,19 @@
     <section style="padding: 4rem 0; background: var(--light-bg); text-align: center;">
         <div class="container">
             <h2 style="font-size: 2rem; margin-bottom: 1rem;">You don't need to be a billionaire</h2>
-            <p style="max-width: 600px; margin: 0 auto 2rem; opacity: 0.8;">You just need hope<br>and the will to share it.</p>
-            <a href="https://play.google.com/store/apps/details?id=com.featsclub.seva&hl=en" class="cta-btn" style="font-size: 1.2rem; padding: 1rem 3rem;" target="_blank" rel="noopener noreferrer">Join Billion Hopes</a>
+            <p style="max-width: 600px; margin: 0 auto 2rem; opacity: 0.8;">You just need hope<br>and the will to share
+                it.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.featsclub.seva&hl=en" class="cta-btn"
+                style="font-size: 1.2rem; padding: 1rem 3rem;" target="_blank" rel="noopener noreferrer">Join Billion
+                Hopes</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Billion Hopes Philanthropic Foundation. Envisioned by Dr. Dayaprasad Kulkarni. All rights reserved.</p>
+            <p>&copy; 2026 Billion Hopes Philanthropic Foundation. Envisioned by Dr. Dayaprasad Kulkarni. All rights
+                reserved.</p>
             <p style="margin-top: 1rem; opacity: 0.7;">Igniting a Billion Hopes | Empowering a Billion Lives</p>
         </div>
     </footer>
@@ -743,7 +803,7 @@
             function parseTarget(str) {
                 if (!str) return 0;
                 const s = String(str).trim().toUpperCase();
-                const multipliers = {K: 1e3, M: 1e6, B: 1e9};
+                const multipliers = { K: 1e3, M: 1e6, B: 1e9 };
                 const last = s[s.length - 1];
                 if (multipliers[last]) {
                     const num = parseFloat(s.slice(0, -1)) || 0;
@@ -835,4 +895,5 @@
         });
     </script>
 </body>
+
 </html>
