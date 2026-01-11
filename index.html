@@ -105,7 +105,50 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
         }
+        .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
 
+.menu-toggle span {
+    width: 24px;
+    height: 3px;
+    background: var(--dark-blue);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile nav dropdown */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        padding: 1.5rem 0;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li a {
+        font-size: 1.1rem;
+    }
+}
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -516,19 +559,25 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="nav-container">
-            <div class="logo">Billion Hopes Philanthropy Fund</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#vision">Vision</a></li>
-                <li><a href="#pillars">Pillars</a></li>
-                <li><a href="mandate.html">Mandate</a></li>
-                <li><a href="#involved">Get Involved</a></li>
-            </ul>
-            <a href="https://play.google.com/store/apps/details?id=com.featsclub.seva&hl=en" class="cta-btn"
-                target="_blank" rel="noopener noreferrer">Start Giving</a>
-        </div>
+       <div class="nav-container">
+    <div class="logo">Billion Hopes Philanthropy Fund</div>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#pillars">Pillars</a></li>
+        <li><a href="mandate.html">Mandate</a></li>
+        <li><a href="#involved">Get Involved</a></li>
+    </ul>
+
+    <div class="menu-toggle">
+        <span></span><span></span><span></span>
+    </div>
+
+    <a href="https://play.google.com/store/apps/details?id=com.featsclub.seva&hl=en"
+       class="cta-btn" target="_blank">Start Giving</a>
+</div>
     </nav>
 
 
