@@ -72,6 +72,7 @@
             gap: 2rem;
             margin-right:2rem;
             margin-left : 2rem;
+            white-space: nowrap;
         }
 
         .nav-links a {
@@ -79,12 +80,69 @@
             color: var(--dark-blue);
             font-weight: 500;
             transition: color 0.3s;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
             color: var(--gold);
         }
+.dropdown {
+  position: relative;
+}
 
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--white);
+  min-width: 200px;
+  list-style: none;
+  padding: 1rem 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  padding: 0;
+}
+
+.dropdown-menu a {
+  padding: 0.8rem 1.5rem;
+  display: block;
+  font-weight: 400;
+}
+
+.dropdown-menu a:hover {
+  background: var(--light-gold);
+  color: var(--gold);
+}
+
+/* Mobile dropdown adjustments */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: none;
+  }
+  
+  .nav-links.active .dropdown-menu {
+    display: block;
+  }
+}
        .cta-btn {
     background: var(--gold);
     color: var(--white);
@@ -118,6 +176,28 @@
     background: var(--dark-blue);
     border-radius: 2px;
     transition: all 0.3s ease;
+}
+/* Hamburger Animation */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile nav improvements */
+@media (max-width: 768px) {
+  .nav-container > .cta-btn {
+    display: none;
+  }
+  .nav-links li a {
+    padding: 0.8rem 1rem;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 /* Mobile nav dropdown */
@@ -540,7 +620,7 @@
         .counter-number {
             font-size: 2rem;
         }
-        }
+        
 
         /* Scroll animations */
         .reveal {
@@ -558,18 +638,51 @@
 
 <body>
     <!-- Navigation -->
-    <nav>
-       <div class="nav-container">
+    <!-- Navigation -->
+<!-- Navigation -->
+<nav>
+  <div class="nav-container">
     <div class="logo">Billion Hopes Philanthropy Fund</div>
-
+    
     <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#vision">Vision</a></li>
-        <li><a href="#pillars">Pillars</a></li>
-        <li><a href="mandate.html">Mandate</a></li>
-        <li><a href="#involved">Get Involved</a></li>
+      <li><a href="#home">Home</a></li>
+      <li class="dropdown">
+        <a href="#about">About Us</a>
+        <ul class="dropdown-menu">
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#pillars">Pillars</a></li>
+          <li><a href="#team">Team</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#changemakers">Changemakers</a>
+        <ul class="dropdown-menu">
+          <li><a href="mandate.html">Mandate</a></li>
+          <li><a href="criteria.html">Criteria</a></li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.featsclub.seva&hl=en" target="_blank">Seva Global App</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#donors">Donors</a>
+        <ul class="dropdown-menu">
+          <li><a href="#individual">Individual</a></li>
+          <li><a href="#corporate">Corporate</a></li>
+          <li><a href="#diaspora">Diaspora</a></li>
+        </ul>
+      </li>
+      <li><a href="#contact">Contact Us</a></li>
     </ul>
+
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <a href="https://play.google.com/store/apps/details?id=com.featsclub.seva&hl=en" class="cta-btn" target="_blank">Start Giving</a>
+  </div>
+</nav>
+
 
     <div class="menu-toggle">
         <span></span><span></span><span></span>
